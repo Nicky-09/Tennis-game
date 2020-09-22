@@ -8,6 +8,8 @@
         var ballY=50;
         ballSpeedX=10;
         ballSpeedY=4;
+        p1Score=0;
+        p2Score=0;
         
         var paddle1Y=250;
         var paddle2Y=250;
@@ -61,6 +63,7 @@
             }
             else{
             ballReset();
+            p2Score++;
             }
         }
         if(ballX>canvas.width){
@@ -69,6 +72,7 @@
             }
             else{
             ballReset();
+            p1Score++;
             }
         }
         if(ballY<0){
@@ -90,6 +94,10 @@
 
         //draws the ball
         colorCircle(ballX,ballY,10,'white');
+
+        canvasContext.fillText(p1Score,100,100);
+        canvasContext.fillText(p2Score,canvas.width-100,100);
+
     } 
     function colorCircle(centerX,centerY,radius,drawColor){
         canvasContext.fillStyle=drawColor;
